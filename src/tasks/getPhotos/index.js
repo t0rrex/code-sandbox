@@ -1,4 +1,4 @@
-import "../styles.css";
+import "../../styles.css";
 
 const title = document.createElement("h1");
 title.innerHTML = "Get Photos from API and show them!";
@@ -12,3 +12,7 @@ document.getElementById("app").appendChild(title);
 
 // Адрес получения картинок - https://picurl.herokuapp.com/users/
 // id картинок: 2, 7, 1, 8, 3, 9
+
+//get photos request handler
+
+//insert photos in html
