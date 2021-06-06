@@ -5,7 +5,7 @@ document.getElementById("app").innerHTML = `
 <div>Create our own implementation of built-in array methods</div>
 `;
 
-
+//sort
 const sort = (arr) => {
   let temp;
 
@@ -23,4 +23,4 @@ const sort = (arr) => {
 };
 
 const sorted = sort([1, 2, 4, 5, -3, 1, 4, 7, 8, -5]);
-console.log("sorted", sorted);
+// console.log("sorted", sorted);
