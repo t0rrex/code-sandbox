@@ -1,3 +1,11 @@
+import "../styles.css";
+
+document.getElementById("app").innerHTML = `
+<h1>Array Methods!</h1>
+<div>Create our own implementation of built-in array methods</div>
+`;
+
+
 const sort = (arr) => {
   let temp;
 
