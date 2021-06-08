@@ -1,4 +1,4 @@
-import "../styles.css";
+import "../../styles.css";
 
 document.getElementById("app").innerHTML = `
 <h1>Array Methods!</h1>
@@ -23,4 +23,4 @@ const sort = (arr) => {
 };
 
 const sorted = sort([1, 2, 4, 5, -3, 1, 4, 7, 8, -5]);
-// console.log("sorted", sorted);
+console.log("sorted", sorted);
