@@ -1,4 +1,4 @@
-import '../../styles.css';
+import './styles.css';
 
 const title = document.createElement('h1');
 title.innerHTML = 'Get Photos from API and show them!';
@@ -20,23 +20,26 @@ document.getElementById('app').appendChild(title).appendChild(images);
 // SOLUTION:
 
 const getImageURLs = async (url, ids) => {
-  const loading = document.createElement('h6');
-  loading.innerHTML = '...loading';
-
-  document.getElementById('images').appendChild(loading);
-
   return !Array.isArray(ids)
     ? fetch(url + ids)
     : Promise.all(ids.map(id => fetch(url + id).then(res => res.json())));
 };
 
-// getImageURLs('https://picurl.herokuapp.com/users/', 2)
-//   .then(res => res.json())
-//   .then(result => console.log('single result', result))
-//   .catch(() => console.log('Single - Something went wrong. Please try again'));
+const loading = document.createElement('h6');
+loading.innerHTML = '...loading';
+
+document.getElementById('images').appendChild(loading);
 
 getImageURLs('https://picurl.herokuapp.com/users/', [2, 7, 1, 8, 3, 9])
-  .then(result => console.log('Insert res into html here)', result))
+  .then(results => {
+    const images = results.map(image => {
+      const imageEl = document.createElement('img');
+      imageEl.classList.add('image', 'rounded');
+      imageEl.src = image.url;
+      return imageEl;
+    });
+    console.log(images);
+  })
   .catch(() =>
     console.log('Multiple - Something went wrong. Please try again')
   );
