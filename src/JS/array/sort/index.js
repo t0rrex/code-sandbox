@@ -1,11 +1,8 @@
-import '../../styles.css';
-
 document.getElementById('app').innerHTML = `
-<h1>Array Methods!</h1>
-<div>Create our own implementation of built-in array methods</div>
+<h1>Array Sorting!</h1>
 `;
 
-//sort
+//bubble sort
 const sort = arr => {
   let temp;
 
